@@ -25,7 +25,7 @@ if(params.downloadMethod.toLowerCase() == 'sra') {
 }
 else if (params.downloadMethod.toLowerCase() == 'local') {
   if (params.libraryLayout.toLowerCase() == 'paired') {
-    input = Channel.fromFilePairs(params.inputPath + "/*_{1,2}.fastq")
+    input = Channel.fromFilePairs(params.inputPath + "/*_R{1,2}_001.fastq.gz")
   }
   else if (params.libraryLayout.toLowerCase() == 'single') {
     input = Channel.fromPath(params.inputPath + "/*.fastq").map { file -> tuple(file.baseName, [file]) }
