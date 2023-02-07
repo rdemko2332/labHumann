@@ -12,6 +12,7 @@ RUN apt-get update && \
     trimmomatic=0.39+dfsg-1 \
     libbz2-dev \
     liblzma-dev \
+    bowtie2 \
   && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install cython==0.29.30
